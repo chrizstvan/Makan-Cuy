@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LocationView" customModule="Makan_Cuy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -62,6 +62,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="allowAction:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="2Q3-7w-aHx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5A-Kd-MKT">
                                         <rect key="frame" x="32" y="66" width="311" height="50"/>
@@ -74,6 +77,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="denyAction:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="qVl-3N-9AW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="8" left="32" bottom="8" right="32"/>
@@ -90,21 +96,26 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SwA-AX-qWU" secondAttribute="trailing" id="qj9-aR-qyB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="allowButton" destination="X7S-nq-GBZ" id="ppw-6H-mbf"/>
+                            <outlet property="denyButton" destination="H5A-Kd-MKT" id="OFd-ZY-XBd"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="228" y="30"/>
         </scene>
         <!--Warung-->
         <scene sceneID="EJc-D9-iBh">
             <objects>
-                <tableViewController id="l3D-X3-4Up" sceneMemberID="viewController">
+                <tableViewController id="l3D-X3-4Up" customClass="WarungTableViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iSe-zj-bgD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WarungCell" rowHeight="200" id="n9e-GR-8t8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WarungCell" rowHeight="200" id="n9e-GR-8t8" customClass="WarungTableViewCell" customModule="Makan_Cuy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n9e-GR-8t8" id="SMT-dI-myr">
@@ -171,6 +182,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="locationLabel" destination="mVy-a3-eQ4" id="oNx-6M-6Z7"/>
+                                    <outlet property="pinImageView" destination="qXi-y1-vAE" id="xg1-rD-4pL"/>
+                                    <outlet property="warungImageView" destination="axF-gm-rR3" id="bOc-q4-hHP"/>
+                                    <outlet property="warungNameLabel" destination="wC5-gU-ljj" id="Qn2-r1-MqD"/>
                                     <segue destination="8QG-r1-K14" kind="show" id="bZK-Ii-y9L"/>
                                 </connections>
                             </tableViewCell>
@@ -189,8 +204,8 @@
         <!--Title-->
         <scene sceneID="vm3-e0-Ihj">
             <objects>
-                <viewController id="8QG-r1-K14" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="j4l-md-Eqg">
+                <viewController id="8QG-r1-K14" customClass="DetailsFoodViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j4l-md-Eqg" customClass="DetailsFoodView" customModule="Makan_Cuy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -350,6 +365,15 @@
                             <constraint firstItem="2al-PY-1xR" firstAttribute="leading" secondItem="lEp-et-Lc7" secondAttribute="leading" id="vG1-2H-lLD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lEp-et-Lc7"/>
+                        <connections>
+                            <outlet property="collectionView" destination="XTq-FM-diZ" id="cmw-yn-yJB"/>
+                            <outlet property="hoursLabel" destination="OFh-bh-SZm" id="ase-Cd-tkN"/>
+                            <outlet property="locationLabel" destination="tZ1-dU-B2T" id="Pz5-OS-Nv3"/>
+                            <outlet property="mapView" destination="mCN-Dj-6LZ" id="p9I-ze-RIz"/>
+                            <outlet property="pageControll" destination="uRK-vg-0Hg" id="QKz-ow-hHc"/>
+                            <outlet property="priceLabel" destination="rcn-As-DNU" id="XRY-Rx-DQk"/>
+                            <outlet property="ratingsLabel" destination="MjO-Wg-lAF" id="UZP-Kk-f3p"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="03P-eC-qX6"/>
                     <size key="freeformSize" width="375" height="1024"/>

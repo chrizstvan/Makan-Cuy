@@ -12,6 +12,13 @@
 		BD2050DD23DFDB5100FE1F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2050DB23DFDB5100FE1F8F /* Main.storyboard */; };
 		BD2050DF23DFDB5400FE1F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2050DE23DFDB5400FE1F8F /* Assets.xcassets */; };
 		BD2050E223DFDB5400FE1F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2050E023DFDB5400FE1F8F /* LaunchScreen.storyboard */; };
+		BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050EA23DFF5E400FE1F8F /* BaseView.swift */; };
+		BD2050EF23DFF76600FE1F8F /* DetailsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050EE23DFF76600FE1F8F /* DetailsFoodView.swift */; };
+		BD2050F323DFFBB400FE1F8F /* DetailsFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050F223DFFBB400FE1F8F /* DetailsFoodViewController.swift */; };
+		BD2050F623DFFCAD00FE1F8F /* WarungTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050F523DFFCAD00FE1F8F /* WarungTableViewController.swift */; };
+		BD2050F923DFFD0D00FE1F8F /* WarungTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050F823DFFD0D00FE1F8F /* WarungTableViewCell.swift */; };
+		BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */; };
+		BD2050FF23E0004700FE1F8F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FE23E0004700FE1F8F /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		BD2050DE23DFDB5400FE1F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2050E123DFDB5400FE1F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD2050E323DFDB5400FE1F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD2050EA23DFF5E400FE1F8F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		BD2050EE23DFF76600FE1F8F /* DetailsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodView.swift; sourceTree = "<group>"; };
+		BD2050F223DFFBB400FE1F8F /* DetailsFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodViewController.swift; sourceTree = "<group>"; };
+		BD2050F523DFFCAD00FE1F8F /* WarungTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarungTableViewController.swift; sourceTree = "<group>"; };
+		BD2050F823DFFD0D00FE1F8F /* WarungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarungTableViewCell.swift; sourceTree = "<group>"; };
+		BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		BD2050FE23E0004700FE1F8F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 		BD2050D623DFDB5100FE1F8F /* Makan Cuy */ = {
 			isa = PBXGroup;
 			children = (
+				BD2050E923DFF5A700FE1F8F /* Screen */,
 				BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */,
 				BD2050D923DFDB5100FE1F8F /* ViewController.swift */,
 				BD2050DB23DFDB5100FE1F8F /* Main.storyboard */,
@@ -62,6 +77,68 @@
 				BD2050E323DFDB5400FE1F8F /* Info.plist */,
 			);
 			path = "Makan Cuy";
+			sourceTree = "<group>";
+		};
+		BD2050E923DFF5A700FE1F8F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050FA23DFFF0C00FE1F8F /* Location */,
+				BD2050F423DFFC8500FE1F8F /* List */,
+				BD2050EC23DFF71900FE1F8F /* Details */,
+				BD2050EA23DFF5E400FE1F8F /* BaseView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BD2050EC23DFF71900FE1F8F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050ED23DFF74000FE1F8F /* Views */,
+				BD2050F223DFFBB400FE1F8F /* DetailsFoodViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		BD2050ED23DFF74000FE1F8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050EE23DFF76600FE1F8F /* DetailsFoodView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD2050F423DFFC8500FE1F8F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050F723DFFCE900FE1F8F /* Views */,
+				BD2050F523DFFCAD00FE1F8F /* WarungTableViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BD2050F723DFFCE900FE1F8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050F823DFFD0D00FE1F8F /* WarungTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD2050FA23DFFF0C00FE1F8F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050FB23DFFF1800FE1F8F /* Views */,
+				BD2050FE23E0004700FE1F8F /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		BD2050FB23DFFF1800FE1F8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +212,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */,
+				BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */,
+				BD2050EF23DFF76600FE1F8F /* DetailsFoodView.swift in Sources */,
+				BD2050F323DFFBB400FE1F8F /* DetailsFoodViewController.swift in Sources */,
 				BD2050DA23DFDB5100FE1F8F /* ViewController.swift in Sources */,
 				BD2050D823DFDB5100FE1F8F /* AppDelegate.swift in Sources */,
+				BD2050FF23E0004700FE1F8F /* LocationViewController.swift in Sources */,
+				BD2050F923DFFD0D00FE1F8F /* WarungTableViewCell.swift in Sources */,
+				BD2050F623DFFCAD00FE1F8F /* WarungTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

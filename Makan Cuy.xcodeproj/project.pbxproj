@@ -19,6 +19,7 @@
 		BD2050F923DFFD0D00FE1F8F /* WarungTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050F823DFFD0D00FE1F8F /* WarungTableViewCell.swift */; };
 		BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */; };
 		BD2050FF23E0004700FE1F8F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FE23E0004700FE1F8F /* LocationViewController.swift */; };
+		BD20510223E01C6D00FE1F8F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD20510123E01C6D00FE1F8F /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BD2050F823DFFD0D00FE1F8F /* WarungTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarungTableViewCell.swift; sourceTree = "<group>"; };
 		BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		BD2050FE23E0004700FE1F8F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		BD20510123E01C6D00FE1F8F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		BD2050D623DFDB5100FE1F8F /* Makan Cuy */ = {
 			isa = PBXGroup;
 			children = (
+				BD20510023E01C3B00FE1F8F /* Services */,
 				BD2050E923DFF5A700FE1F8F /* Screen */,
 				BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */,
 				BD2050D923DFDB5100FE1F8F /* ViewController.swift */,
@@ -139,6 +142,14 @@
 				BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BD20510023E01C3B00FE1F8F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BD20510123E01C6D00FE1F8F /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */,
 				BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */,
+				BD20510223E01C6D00FE1F8F /* LocationService.swift in Sources */,
 				BD2050EF23DFF76600FE1F8F /* DetailsFoodView.swift in Sources */,
 				BD2050F323DFFBB400FE1F8F /* DetailsFoodViewController.swift in Sources */,
 				BD2050DA23DFDB5100FE1F8F /* ViewController.swift in Sources */,

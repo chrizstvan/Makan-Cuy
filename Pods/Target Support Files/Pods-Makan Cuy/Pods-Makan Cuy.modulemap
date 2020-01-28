@@ -1,0 +1,6 @@
+framework module Pods_Makan_Cuy {
+  umbrella header "Pods-Makan Cuy-umbrella.h"
+
+  export *
+  module * { export * }
+}

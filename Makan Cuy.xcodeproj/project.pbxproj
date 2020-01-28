@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15ED5CC5AEA0EB3DC8490F1D /* Pods_Makan_Cuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF6AB12A803B5FACFAEB25D /* Pods_Makan_Cuy.framework */; };
+		BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E425A23E0FAB400A67720 /* NetworkService.swift */; };
 		BD2050D823DFDB5100FE1F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */; };
 		BD2050DA23DFDB5100FE1F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050D923DFDB5100FE1F8F /* ViewController.swift */; };
 		BD2050DD23DFDB5100FE1F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2050DB23DFDB5100FE1F8F /* Main.storyboard */; };
@@ -20,9 +22,13 @@
 		BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */; };
 		BD2050FF23E0004700FE1F8F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050FE23E0004700FE1F8F /* LocationViewController.swift */; };
 		BD20510223E01C6D00FE1F8F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD20510123E01C6D00FE1F8F /* LocationService.swift */; };
+		BDD7DD0A23E063700014C75E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDD7DD0923E063700014C75E /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06317A54DBB4D33CA1816EFE /* Pods-Makan Cuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.debug.xcconfig"; sourceTree = "<group>"; };
+		5D55556CD64FBC2B509D58F4 /* Pods-Makan Cuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.release.xcconfig"; sourceTree = "<group>"; };
+		BD1E425A23E0FAB400A67720 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BD2050D423DFDB5100FE1F8F /* Makan Cuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Makan Cuy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD2050D923DFDB5100FE1F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		BD2050FC23DFFF4D00FE1F8F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		BD2050FE23E0004700FE1F8F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		BD20510123E01C6D00FE1F8F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		BDD7DD0923E063700014C75E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EAF6AB12A803B5FACFAEB25D /* Pods_Makan_Cuy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makan_Cuy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +53,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15ED5CC5AEA0EB3DC8490F1D /* Pods_Makan_Cuy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C51DAC9FA725DA1327B08D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06317A54DBB4D33CA1816EFE /* Pods-Makan Cuy.debug.xcconfig */,
+				5D55556CD64FBC2B509D58F4 /* Pods-Makan Cuy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD2050CB23DFDB5000FE1F8F = {
 			isa = PBXGroup;
 			children = (
+				BDD7DD0923E063700014C75E /* Podfile */,
 				BD2050D623DFDB5100FE1F8F /* Makan Cuy */,
 				BD2050D523DFDB5100FE1F8F /* Products */,
+				6C51DAC9FA725DA1327B08D5 /* Pods */,
+				C3769DE3501992016488E32E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,8 +169,17 @@
 			isa = PBXGroup;
 			children = (
 				BD20510123E01C6D00FE1F8F /* LocationService.swift */,
+				BD1E425A23E0FAB400A67720 /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C3769DE3501992016488E32E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF6AB12A803B5FACFAEB25D /* Pods_Makan_Cuy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD2050E623DFDB5400FE1F8F /* Build configuration list for PBXNativeTarget "Makan Cuy" */;
 			buildPhases = (
+				821B9DD1A15F3CA571F1E6F4 /* [CP] Check Pods Manifest.lock */,
 				BD2050D023DFDB5100FE1F8F /* Sources */,
 				BD2050D123DFDB5100FE1F8F /* Frameworks */,
 				BD2050D223DFDB5100FE1F8F /* Resources */,
+				A7BC62E16E851B67E1B3E4FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,17 +244,64 @@
 			files = (
 				BD2050E223DFDB5400FE1F8F /* LaunchScreen.storyboard in Resources */,
 				BD2050DF23DFDB5400FE1F8F /* Assets.xcassets in Resources */,
+				BDD7DD0A23E063700014C75E /* Podfile in Resources */,
 				BD2050DD23DFDB5100FE1F8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		821B9DD1A15F3CA571F1E6F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Makan Cuy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7BC62E16E851B67E1B3E4FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD2050D023DFDB5100FE1F8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */,
 				BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */,
 				BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */,
 				BD20510223E01C6D00FE1F8F /* LocationService.swift in Sources */,
@@ -376,6 +455,7 @@
 		};
 		BD2050E723DFDB5400FE1F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06317A54DBB4D33CA1816EFE /* Pods-Makan Cuy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +474,7 @@
 		};
 		BD2050E823DFDB5400FE1F8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D55556CD64FBC2B509D58F4 /* Pods-Makan Cuy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

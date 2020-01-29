@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class WarungTableViewCell: UITableViewCell {
     
@@ -24,6 +25,12 @@ class WarungTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(with viewModel: WarungListViewModel) {
+        warungImageView.af_setImage(withURL: viewModel.imageUrl)
+        warungNameLabel.text = viewModel.name
+        locationLabel.text = viewModel.distance
     }
 
 }

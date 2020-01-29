@@ -24,15 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Hit API
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        service.request(.search(lat: 42.361145, long: -71.057083)) { (result) in
-            switch result {
-            case .success(let response):
-                let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
-                print(root)
-            case .failure(let error):
-                print("My Error : \(error)")
-            }
-        }
         
         //Check Location
         switch locationService.status {
@@ -43,7 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window.rootViewController = locationViewController
         default:
-            assertionFailure()
+            let nav = storyboard.instantiateViewController(withIdentifier: "WartegNavigationController") as? UINavigationController
+            window.rootViewController = nav
+            loadBusinesses() //HIT API
         }
         
         window.makeKeyAndVisible()
@@ -73,6 +66,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    private func loadBusinesses() {
+        service.request(.search(lat: 42.361145, long: -71.057083)) { (result) in
+            switch result {
+            case .success(let response):
+                let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
+                let viewModel = root?.businesses.compactMap(WarungListViewModel.init)
+                
+                if let nav = self.window.rootViewController as? UINavigationController,
+                    let warungListViewController = nav.topViewController as? WarungTableViewController {
+                    warungListViewController.viewModel = viewModel ?? []
+                }
+                
+            case .failure(let error):
+                print("My Error : \(error)")
+            }
+        }
+    }
     
 }
 

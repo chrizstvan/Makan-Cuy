@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15ED5CC5AEA0EB3DC8490F1D /* Pods_Makan_Cuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF6AB12A803B5FACFAEB25D /* Pods_Makan_Cuy.framework */; };
 		BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E425A23E0FAB400A67720 /* NetworkService.swift */; };
+		BD1E425D23E1C2C600A67720 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E425C23E1C2C600A67720 /* Models.swift */; };
 		BD2050D823DFDB5100FE1F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */; };
 		BD2050DA23DFDB5100FE1F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050D923DFDB5100FE1F8F /* ViewController.swift */; };
 		BD2050DD23DFDB5100FE1F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2050DB23DFDB5100FE1F8F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		06317A54DBB4D33CA1816EFE /* Pods-Makan Cuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.debug.xcconfig"; sourceTree = "<group>"; };
 		5D55556CD64FBC2B509D58F4 /* Pods-Makan Cuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.release.xcconfig"; sourceTree = "<group>"; };
 		BD1E425A23E0FAB400A67720 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BD1E425C23E1C2C600A67720 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BD2050D423DFDB5100FE1F8F /* Makan Cuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Makan Cuy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD2050D923DFDB5100FE1F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				BD2050F723DFFCE900FE1F8F /* Views */,
 				BD2050F523DFFCAD00FE1F8F /* WarungTableViewController.swift */,
+				BD1E425C23E1C2C600A67720 /* Models.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */,
 				BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */,
 				BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */,
+				BD1E425D23E1C2C600A67720 /* Models.swift in Sources */,
 				BD20510223E01C6D00FE1F8F /* LocationService.swift in Sources */,
 				BD2050EF23DFF76600FE1F8F /* DetailsFoodView.swift in Sources */,
 				BD2050F323DFFBB400FE1F8F /* DetailsFoodViewController.swift in Sources */,

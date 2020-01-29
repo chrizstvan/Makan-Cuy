@@ -16,16 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locationService = LocationService()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let service = MoyaProvider<YelpService.BusinessesProvider>()
+    let jsonDecoder = JSONDecoder()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         //Hit API
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         service.request(.search(lat: 42.361145, long: -71.057083)) { (result) in
             switch result {
             case .success(let response):
-                print(try? JSONSerialization.jsonObject(with: response.data, options: []))
+                let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
+                print(root)
             case .failure(let error):
                 print("My Error : \(error)")
             }

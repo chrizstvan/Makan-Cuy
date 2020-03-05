@@ -30,7 +30,7 @@ class WarungTableViewCell: UITableViewCell {
     func configure(with viewModel: WarungListViewModel) {
         warungImageView.af_setImage(withURL: viewModel.imageUrl)
         warungNameLabel.text = viewModel.name
-        locationLabel.text = viewModel.distance
+        locationLabel.text = viewModel.formattedDistance
     }
 
 }

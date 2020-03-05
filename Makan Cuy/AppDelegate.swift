@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,21 +23,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        service.request(.details(id: "WavvLdfdP6g8aZTtbBQHTw")) { (result) in
+            switch result {
+            case .success(let response):
+                let detail = try? self.jsonDecoder.decode(Details.self, from: response.data)
+                print("Details : \n\n \(detail)")
+            case .failure(let error):
+                print("error to get details : \(error)")
+            }
+        }
+        
         //Hit API
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        //Get location
+        locationService.didChangeStatus = { [weak self] success in
+            if success {
+                self?.locationService.getLocation()
+            }
+        }
+        
+        locationService.newLocation = { [weak self] result in
+            switch result {
+            case .success(let location):
+                self?.loadBusinesses(with: location.coordinate)
+            case .failure(let error):
+                assertionFailure("Error getting user location \(error)")
+                
+            }
+        }
         
         //Check Location
         switch locationService.status {
         case .notDetermined, .denied, .restricted:
             let locationViewController = storyboard.instantiateViewController(withIdentifier: "LocationViewController") as? LocationViewController
             
-            locationViewController?.locationService = locationService
+            //locationViewController?.locationService = locationService
+            locationViewController?.delegate = self
             
             window.rootViewController = locationViewController
         default:
             let nav = storyboard.instantiateViewController(withIdentifier: "WartegNavigationController") as? UINavigationController
             window.rootViewController = nav
-            loadBusinesses() //HIT API
+            //loadBusinesses() //HIT API
+            locationService.getLocation()
         }
         
         window.makeKeyAndVisible()
@@ -66,14 +96,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    private func loadBusinesses() {
-        service.request(.search(lat: 42.361145, long: -71.057083)) { (result) in
+    private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
+        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
             switch result {
             case .success(let response):
-                let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
-                let viewModel = root?.businesses.compactMap(WarungListViewModel.init)
+                guard let strongSelf = self else {return}
+                let root = try? strongSelf.jsonDecoder.decode(Root.self, from: response.data)
+                let viewModel = root?.businesses
+                    .compactMap(WarungListViewModel.init)
+                    .sorted(by: { $0.distance < $1.distance})
                 
-                if let nav = self.window.rootViewController as? UINavigationController,
+                if let nav = strongSelf.window.rootViewController as? UINavigationController,
                     let warungListViewController = nav.topViewController as? WarungTableViewController {
                     warungListViewController.viewModel = viewModel ?? []
                 }
@@ -83,6 +116,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+}
+
+extension AppDelegate: LocationAction{
+    func didTapAllow() {
+        locationService.requestLocationAuthorization()
+    }
+    
     
 }
 

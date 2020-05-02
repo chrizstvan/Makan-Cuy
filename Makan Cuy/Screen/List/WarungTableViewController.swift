@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListAction: class {
+    func didTapCell(_ viewController: UIViewController, viewModel: WarungListViewModel)
+}
+
 class WarungTableViewController: UITableViewController {
     
     var viewModel = [WarungListViewModel]() {
@@ -15,6 +19,8 @@ class WarungTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    weak var delegate: ListAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +55,13 @@ class WarungTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailVm = storyboard?.instantiateViewController(identifier: "DetailViewController") else { return }
+        navigationController?.pushViewController(detailVm, animated: true)
+        let vm = viewModel[indexPath.row]
+        delegate?.didTapCell(detailVm, viewModel: vm)
+    }
 
     /*
     // Override to support conditional editing of the table view.

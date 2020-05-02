@@ -18,20 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let service = MoyaProvider<YelpService.BusinessesProvider>()
     let jsonDecoder = JSONDecoder()
+    var navigationController: UINavigationController?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        service.request(.details(id: "WavvLdfdP6g8aZTtbBQHTw")) { (result) in
-            switch result {
-            case .success(let response):
-                let detail = try? self.jsonDecoder.decode(Details.self, from: response.data)
-                print("Details : \n\n \(detail)")
-            case .failure(let error):
-                print("error to get details : \(error)")
-            }
-        }
+        
         
         //Hit API
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -64,9 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = locationViewController
         default:
             let nav = storyboard.instantiateViewController(withIdentifier: "WartegNavigationController") as? UINavigationController
+            self.navigationController = nav
             window.rootViewController = nav
             //loadBusinesses() //HIT API
             locationService.getLocation()
+            (nav?.topViewController as? WarungTableViewController)?.delegate = self
         }
         
         window.makeKeyAndVisible()
@@ -96,11 +91,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
-        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
+    private func loadDetails(for viewController: UIViewController, withId id: String) {
+        service.request(.details(id: id)) { [weak self] (result) in
             switch result {
             case .success(let response):
                 guard let strongSelf = self else {return}
+                if let detail = try? strongSelf.jsonDecoder.decode(Details.self, from: response.data){
+                    let detailViewModel = DetailViewModel(detail: detail)
+                    (viewController as? DetailsFoodViewController)?.viewModel = detailViewModel
+                }
+            case .failure(let error):
+                print("error to get details : \(error)")
+            }
+        }
+    }
+    
+    private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
+        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
+            guard let strongSelf = self else {return}
+            switch result {
+            case .success(let response):
+                
                 let root = try? strongSelf.jsonDecoder.decode(Root.self, from: response.data)
                 let viewModel = root?.businesses
                     .compactMap(WarungListViewModel.init)
@@ -110,7 +121,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let warungListViewController = nav.topViewController as? WarungTableViewController {
                     warungListViewController.viewModel = viewModel ?? []
                 }
-                
+                else if let nav = strongSelf.storyboard.instantiateViewController(withIdentifier: "WartegNavigationController") as? UINavigationController {
+                    strongSelf.navigationController = nav
+                    strongSelf.window.rootViewController?.present(nav, animated: true, completion: {
+                        (nav.topViewController as? WarungTableViewController)?.delegate = self
+                        (nav.topViewController as? WarungTableViewController)?.viewModel = viewModel ?? []
+                    })
+                }
             case .failure(let error):
                 print("My Error : \(error)")
             }
@@ -119,11 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-extension AppDelegate: LocationAction{
+extension AppDelegate: LocationAction, ListAction{
     func didTapAllow() {
         locationService.requestLocationAuthorization()
     }
     
+    func didTapCell(_ viewController: UIViewController, viewModel: WarungListViewModel) {
+        loadDetails(for: viewController, withId: viewModel.id)
+    }
     
 }
 

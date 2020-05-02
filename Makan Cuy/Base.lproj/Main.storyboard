@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,7 +129,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sj5-Cm-3rV">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="178"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="100" image="placeholder-img-4" translatesAutoresizingMaskIntoConstraints="NO" id="axF-gm-rR3">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-img-4" translatesAutoresizingMaskIntoConstraints="NO" id="axF-gm-rR3">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="138"/>
                                                             <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -171,6 +169,11 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="axF-gm-rR3" secondAttribute="trailing" id="HXB-h9-WIh"/>
+                                                        <constraint firstItem="axF-gm-rR3" firstAttribute="top" secondItem="sj5-Cm-3rV" secondAttribute="top" id="Qqq-J7-Tzc"/>
+                                                        <constraint firstItem="axF-gm-rR3" firstAttribute="leading" secondItem="sj5-Cm-3rV" secondAttribute="leading" id="SAv-1p-YOa"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -195,7 +198,6 @@
                                     <outlet property="pinImageView" destination="qXi-y1-vAE" id="xg1-rD-4pL"/>
                                     <outlet property="warungImageView" destination="axF-gm-rR3" id="bOc-q4-hHP"/>
                                     <outlet property="warungNameLabel" destination="wC5-gU-ljj" id="Qn2-r1-MqD"/>
-                                    <segue destination="8QG-r1-K14" kind="show" id="bZK-Ii-y9L"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -213,32 +215,32 @@
         <!--Title-->
         <scene sceneID="vm3-e0-Ihj">
             <objects>
-                <viewController id="8QG-r1-K14" customClass="DetailsFoodViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="8QG-r1-K14" customClass="DetailsFoodViewController" customModule="Makan_Cuy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j4l-md-Eqg" customClass="DetailsFoodView" customModule="Makan_Cuy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2al-PY-1xR">
-                                <rect key="frame" x="0.0" y="88" width="375" height="902"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="946"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hze-dD-LH7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="960"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-FM-diZ">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-FM-diZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="k77-vC-qVM"/>
                                                     <constraint firstAttribute="width" constant="250" id="myV-8I-2Ac"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Di6-Zj-tPf">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Di6-Zj-tPf">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="EJh-Yo-zUq">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EJh-Yo-zUq">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -359,7 +361,7 @@
                                 </constraints>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uRK-vg-0Hg">
-                                <rect key="frame" x="168" y="301" width="39" height="37"/>
+                                <rect key="frame" x="168" y="257" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>

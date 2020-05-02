@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15ED5CC5AEA0EB3DC8490F1D /* Pods_Makan_Cuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF6AB12A803B5FACFAEB25D /* Pods_Makan_Cuy.framework */; };
+		8B5D84D0245D88ED00CD7332 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D84CF245D88ED00CD7332 /* DetailCollectionViewCell.swift */; };
 		BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E425A23E0FAB400A67720 /* NetworkService.swift */; };
 		BD1E425D23E1C2C600A67720 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E425C23E1C2C600A67720 /* Models.swift */; };
 		BD2050D823DFDB5100FE1F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2050D723DFDB5100FE1F8F /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		06317A54DBB4D33CA1816EFE /* Pods-Makan Cuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.debug.xcconfig"; sourceTree = "<group>"; };
 		5D55556CD64FBC2B509D58F4 /* Pods-Makan Cuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makan Cuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makan Cuy/Pods-Makan Cuy.release.xcconfig"; sourceTree = "<group>"; };
+		8B5D84CF245D88ED00CD7332 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD1E425A23E0FAB400A67720 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BD1E425C23E1C2C600A67720 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BD2050D423DFDB5100FE1F8F /* Makan Cuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Makan Cuy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BD2050EE23DFF76600FE1F8F /* DetailsFoodView.swift */,
+				8B5D84CF245D88ED00CD7332 /* DetailCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1E425B23E0FAB400A67720 /* NetworkService.swift in Sources */,
+				8B5D84D0245D88ED00CD7332 /* DetailCollectionViewCell.swift in Sources */,
 				BD2050EB23DFF5E400FE1F8F /* BaseView.swift in Sources */,
 				BD2050FD23DFFF4D00FE1F8F /* LocationView.swift in Sources */,
 				BD1E425D23E1C2C600A67720 /* Models.swift in Sources */,
@@ -465,11 +469,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49LT2MNGBG;
 				INFOPLIST_FILE = "Makan Cuy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "chrizstvan.Makan-Cuy";
+				PRODUCT_BUNDLE_IDENTIFIER = "chrizstvan.Makan-Cuy-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,11 +489,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49LT2MNGBG;
 				INFOPLIST_FILE = "Makan Cuy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "chrizstvan.Makan-Cuy";
+				PRODUCT_BUNDLE_IDENTIFIER = "chrizstvan.Makan-Cuy-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
